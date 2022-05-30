@@ -35,16 +35,20 @@ filemenu = Menu(menubar,tearoff=0) # tearoff=0 is commade to delete ---------- o
 menubar.add_cascade(label='File',menu=filemenu) # .add_cascade is bring object to menu
 filemenu.add_command(label='Import CSV')
 filemenu.add_command(label='Export to Googlesheet')
+
 # Help menu
 def About():
     messagebox.showinfo('About','Hello, this is program to record information\nIf you interested this program, please send the BTC to\nAddress : AAA')
-
 helpmenu = Menu(menubar,tearoff=0)
 menubar.add_cascade(label='Help',menu=helpmenu)
 helpmenu.add_command(label='About',command=About) #command=About is link the def About():
+
 # Donate menu
+def Donate():
+    messagebox.showinfo('Donate','Donate, Address : AAA')
 donatemenu = Menu(menubar,tearoff=0)
 menubar.add_cascade(label='Donate',menu=donatemenu)
+donatemenu.add_command(label='Donate',command=Donate)
 
 
 ################################
