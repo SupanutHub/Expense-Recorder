@@ -23,7 +23,7 @@ dt = datetime.now().strftime('%Y-%m-%d %H:%M:%S') # year-month-date hour-minute-
 dt = days[today]+'-'+dt # today will be changed as the current day
 
 GUI = Tk()
-GUI.title('Expense recording program by SS')
+GUI.title('Expense recording program v.1.0 by SS')
 GUI.geometry('700x800+1000+100')
 
 ############## MENU ##################
@@ -31,7 +31,7 @@ menubar = Menu(GUI)
 GUI.config(menu=menubar)
 
 # File menu
-filemenu = Menu(menubar,tearoff=0) # tearoff=0 is commade to delete ---------- of the commande in menu
+filemenu = Menu(menubar,tearoff=0) # tearoff=0 is commad to delete ---------- (1st row) of the commande in menu
 menubar.add_cascade(label='File',menu=filemenu) # .add_cascade is bring object to menu
 filemenu.add_command(label='Import CSV')
 filemenu.add_command(label='Export to Googlesheet')
@@ -133,8 +133,6 @@ def Save(event=None):
         v_quantity.set('')
         E1.focus()
 
-
-
 Save_icon = PhotoImage(file='SaveButton.png')
 B1 = ttk.Button(F1,text=f'{"Save":>{15}}',image=Save_icon,compound='left',command=Save) # .pack() # normal button size
 B1.pack(ipadx=50,ipady=20,pady=20) # pady is create free space in Y axis from the upper data
@@ -156,7 +154,7 @@ def read_csv():
 L = ttk.Label(T2,text='Result table',font=FONT1).pack(pady=20)
 
 header = ['Date-Time','Expense','Price','Quantity','Total']
-resulttable = ttk.Treeview(T2,columns=header,show='headings',height=10) # show='headings' is for can not show sub items # height = row quantity
+resulttable = ttk.Treeview(T2,columns=header,show='headings',height=15) # show='headings' is for can not show sub items # height = row quantity
 resulttable.pack()
 
 '''
